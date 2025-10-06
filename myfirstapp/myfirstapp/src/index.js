@@ -21,14 +21,13 @@ function BookList() {
       <Book />
       <Book />
       <Book />
-      <Book />
     </section>
   );
 }
 
 const Image = () => {
   return (
-    <img className="book-image" src="https://picsum.photos/200" alt="Random Picsum Image" />
+    <img className="book-image" src="./images/book.jpg" alt="Random Picsum Image" />
   );
 }
 const Author = () => <h4>Abhishek Choudhary</h4>;
