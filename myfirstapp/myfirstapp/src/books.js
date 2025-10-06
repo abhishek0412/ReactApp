@@ -1,17 +1,28 @@
-import { v4 as uuidv4 } from 'uuid';
 import img from './images/book.jpg';
 const books = [
   {
     img: img,
     title: 'Title Abhishek',
     author: 'Abhishek Choudhary',
-    id: uuidv4(),
+    id: 1,
   },
   {
     img: img,
     title: 'Title Supriya',
     author: 'Supriya Moond',
-    id: uuidv4(),
+    id: 2,
+  },
+  {
+    img: img,
+    title: 'Title Rajkumar',
+    author: 'Rajkumar Choudhary',
+    id: 3,
+  },
+  {
+    img: img,
+    title: 'Title Sudhira',
+    author: 'Sudhira Choudhary',
+    id: 4,
   },
 ];
 

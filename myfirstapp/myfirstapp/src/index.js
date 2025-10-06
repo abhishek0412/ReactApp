@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import books from './books';
 import Book from './Book';
+import books from './books';
+import './index.css';
 function Greeting() {
   return (
     <React.Fragment>
@@ -16,11 +16,17 @@ const getBook = (id) => {
   console.log(book);
 };
 function BookList() {
-  return <section className="booklist">{bookNames}</section>;
+  return (
+    <>
+      <h1>Book List</h1>
+      <section className="booklist">{bookNames}</section>
+    </>
+  );
 }
 
 const bookNames = books.map((book) => {
-  return <Book {...book} key={book.id} getBook={getBook} />;
+  console.log(book);
+  return <Book {...book} key={book.id} getBook={getBook} number={book.id} />;
 });
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Greeting />);
