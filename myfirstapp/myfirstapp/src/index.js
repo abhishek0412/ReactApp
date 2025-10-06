@@ -1,56 +1,48 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { v4 as uuidv4 } from 'uuid';
+import { books } from './books';
 function Greeting() {
-  return (<React.Fragment>
-      <BookList />
-  </React.Fragment>);
-}
-
-function BookList() {
   return (
-    <section className="booklist">
-     {bookNames}
-    </section>
+    <React.Fragment>
+      <BookList />
+    </React.Fragment>
   );
 }
 
-const books = [
-  {
-    img: "./images/book.jpg",
-    title: "Title Abhishek",
-    author: "Abhishek Choudhary",
-    id: uuidv4()
-  },
-  {
-    img: "./images/book.jpg",
-    title: "Title Supriya",
-    author: "Supriya Moond",
-    id: uuidv4()
-  }
-];
+const getBook = (id) => {
+  const book = books.find((book) => book.id === id);
+  console.log(book);
+};
+function BookList() {
+  return <section className="booklist">{bookNames}</section>;
+}
 
+const Book = (props) => {
+  const { img, title, author, getBook, id } = props;
 
-  const Book = (props) => {
-  const { img, title, author } = props;
-  
-  const displayTitle = () => {
-    console.log(title);
-  }
+  const getSingleBook = () => {
+    getBook(id);
+  };
+
   return (
     <article className="book">
-    <img src={img} alt={title} />
-    <h2>{title}</h2>
-    <button onClick={displayTitle}>Display Me</button>
-    <h4>{author.toUpperCase()}</h4>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <button
+        onClick={() => {
+          getSingleBook();
+        }}
+      >
+        Click Me
+      </button>
+      <h4>{author.toUpperCase()}</h4>
     </article>
   );
-}
+};
 
 const bookNames = books.map((book) => {
-  return <Book {...book} key={book.id} />;
+  return <Book {...book} key={book.id} getBook={getBook} />;
 });
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Greeting />);
-
