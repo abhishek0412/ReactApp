@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { v4 as uuidv4 } from 'uuid';
 function Greeting() {
   return (<React.Fragment>
       <BookList />
@@ -10,25 +11,25 @@ function Greeting() {
 function BookList() {
   return (
     <section className="booklist">
-      <Book author={firstBook.author} title={firstBook.title} img={firstBook.img} children={<div><p>This is a great book!</p> <button>click me!</button></div>} />
-      <Book author={secondBook.author} title={secondBook.title} img={secondBook.img} />
+     {bookNames}
     </section>
   );
 }
 
-const firstBook = {
-  img: "./images/book.jpg",
-  title: "Title Abhishek",
-  author: "Abhishek Choudhary"
-};
-
-const secondBook = {
-  img: "./images/book.jpg",
-  title: "Title Supriya",
-  author: "Supriya Moond"
-};
-
-
+const books = [
+  {
+    img: "./images/book.jpg",
+    title: "Title Abhishek",
+    author: "Abhishek Choudhary",
+    id: uuidv4()
+  },
+  {
+    img: "./images/book.jpg",
+    title: "Title Supriya",
+    author: "Supriya Moond",
+    id: uuidv4()
+  }
+];
 
   const Book = ({ img, title, author, children }) => {
   return (
@@ -41,6 +42,9 @@ const secondBook = {
   );
 }
 
+const bookNames = books.map((book) => {
+  return <Book key={book.id} img={book.img} title={book.title} author={book.author} />;
+});
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Greeting />);
 
