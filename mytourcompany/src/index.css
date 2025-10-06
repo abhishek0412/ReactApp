@@ -487,7 +487,18 @@ Navbar
   backdrop-filter: blur(10px);
 }
 .nav-icons {
-  display: none;
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+.nav-icon {
+  color: var(--clr-primary-5);
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+.nav-icon:hover {
+  color: var(--clr-primary-7);
 }
 .nav-center {
   width: 90vw;
@@ -498,6 +509,21 @@ Navbar
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.nav-icons {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  justify-content: center;
+}
+.nav-icon {
+  color: var(--clr-primary-5);
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+.nav-icon:hover {
+  color: var(--clr-primary-7);
+  transform: scale(1.2);
 }
 .nav-toggle {
   background: transparent;
@@ -566,6 +592,7 @@ Navbar
   }
   .nav-icons {
     display: flex;
+    margin-top: 0;
   }
 
   .nav-link {
