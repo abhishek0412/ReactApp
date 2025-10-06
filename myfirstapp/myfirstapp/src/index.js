@@ -31,19 +31,20 @@ const books = [
   }
 ];
 
-  const Book = ({ img, title, author, children }) => {
+  const Book = (props) => {
+  const { img, title, author } = props;
+  console.log(props);
   return (
     <article className="book">
     <img src={img} alt={title} />
     <h2>{title}</h2>
     <h4>{author.toUpperCase()}</h4>
-    {children}
     </article>
   );
 }
 
 const bookNames = books.map((book) => {
-  return <Book key={book.id} img={book.img} title={book.title} author={book.author} />;
+  return <Book {...book} key={book.id} />;
 });
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Greeting />);
