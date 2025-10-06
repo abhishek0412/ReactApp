@@ -1,33 +1,19 @@
-Home
-Notes
-Photos
-My full Prettier (.prettierrc) config file
-Back to all
-Dev
-8th August '21
-
-Last Update: 12th March 2025
-
-If you're reading this you probably already know what Prettier it is, but for the avoidance of doubt: Prettier is an opinionated code formatter with official (or community) support for pretty much every code editor and programming language out there. It's extremely widely used in the development community, especially in teams, to keep code bases adherent to a single standard.
-
-I've been using Prettier for years, originally just through VS Code config (when I was working more on solo projects), but now that I develop more frequently with a team I always have a .prettierrc config file in my project's root directory. This allows different projects to have different configuration, and allows you to check this file into the project's git repo, ensuring all developers are committing code with the same style.
-
-But enough waffle - here's the .prettierrc file I've landed on and use in every new project. It sets almost every configurable option - some of which are set to the same as Prettier's own defaults, but I like to include them just for clarity and so that I can see at a glance what options I have available to me for tweaking.
-
 {
   "arrowParens": "always",
   "bracketSpacing": true,
+  "endOfLine": "lf",
   "htmlWhitespaceSensitivity": "css",
   "insertPragma": false,
-  "jsxBracketSameLine": false,
-  "jsxSingleQuote": true,
+  "bracketSameLine": false,
+  "jsxSingleQuote": false,
   "printWidth": 80,
-  "proseWrap": "always",
+  "proseWrap": "preserve",
   "quoteProps": "as-needed",
   "requirePragma": false,
   "semi": true,
   "singleQuote": true,
   "tabWidth": 2,
-  "trailingComma": "all",
-  "useTabs": false
+  "trailingComma": "es5",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto"
 }
