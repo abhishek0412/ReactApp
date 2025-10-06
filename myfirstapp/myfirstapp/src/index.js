@@ -11,7 +11,6 @@ function Greeting() {
 function BookList() {
   return (
     <section className="booklist">
-      <EventExample />
      {bookNames}
     </section>
   );
@@ -32,38 +31,6 @@ const books = [
   }
 ];
 
-const EventExample = () => {
-const handleFormInput = (e) => {
-  console.log(e.targegt);
-
-  }
-  const handleButtonClick = (e) => {
-    alert("Button clicked");
-    console.log("Button clicked");
-  }
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted");
-  }
-
-    return (
-      <section>
-        <form action="" className="form" >
-          <h2>Events in React</h2>
-          <input type="text" name="example" id="" onChange={handleFormInput}  />
-          <button type="submit" onClick={handleFormSubmit}>
-            Submit
-          </button>
-          <div>
-          <button type="button" onClick={handleButtonClick}>
-            Click Me
-          </button>
-          </div>
-        </form>
-      </section>
-    );
-  };    
 
   const Book = (props) => {
   const { img, title, author } = props;
