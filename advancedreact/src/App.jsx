@@ -1,4 +1,4 @@
-import Starter from "./tutorial/03-conditional-rendering/starter/05-short-circuit-examples";
+import Starter from "./tutorial/05-leverage-javascript/starter/List";
 function App() {
   return (
     <div className="container">
