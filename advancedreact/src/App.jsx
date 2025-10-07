@@ -1,4 +1,4 @@
-import Starter from "./tutorial/05-leverage-javascript/starter/List";
+import Starter from "./tutorial/06-forms/starter/04-other-inputs";
 function App() {
   return (
     <div className="container">
